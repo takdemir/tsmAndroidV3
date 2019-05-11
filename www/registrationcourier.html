@@ -31,17 +31,6 @@
     <script type="text/javascript" src="https://socket.kuryeotomasyon.com/socket.io/socket.io.js"></script>
     <script>
       var socket = io.connect("https://socket.kuryeotomasyon.com");
-      var host = window.localStorage.getItem("ipurl");
-      if(host!=='' && host!==undefined && host!==null){
-        host = host.replace('/api','');
-      }
-      var username = window.localStorage.getItem("courierHash");
-      if(username!=='' && username!==null && username!==undefined){
-        socket.emit('connected-user-info',{"username": username, "host":host });
-        socket.on('connected-user-info',function(data){
-
-        });
-      }
 
 
     </script>
@@ -58,6 +47,11 @@
           <section class="login_content">
             <form>
               <h1>Kurye Kayıt Paneli</h1>
+              <div style="margin-bottom: 15px; margin-top: 15px;">
+                <select class="form-control" name="tsmdistrict" id="popuptsmcompanies" style="min-height: 45px" onchange="registerCourier.getDistrict()">
+
+                </select>
+              </div>
               <div>
                 <input type="text" class="form-control" placeholder="Ad Soyad" name="name" id="popupname" style="min-height: 45px" />
               </div>
@@ -72,7 +66,7 @@
               </div>
               <div style="margin-bottom: 15px; margin-top: 15px;">
                 <select class="form-control" name="tsmdistrict" id="popuptsmdistrict" style="min-height: 45px">
-                  <option value="">Semt Seçiniz...</option>
+
                 </select>
               </div>
               <div>
@@ -92,12 +86,12 @@
 
                 </select>
               </div>
-              <div>
+<!--              <div>
                 <input type="text" class="form-control" placeholder="Kullanıcıadı" name="webUsername" id="popupwebUsername" style="min-height: 45px">
               </div>
               <div>
                 <input type="password" class="form-control" placeholder="Şifre" name="popupwebPassword" id="popupwebPassword" style="min-height: 45px" />
-              </div>
+              </div>-->
               <div>
                 <input type="button" class="btn btn-success" onclick="registerCourier.register()" value="Kaydol" style="width: 100%; min-height: 55px" />
                 <!--<a class="reset_pass" href="#">Şifremi Unuttum!</a>-->
@@ -109,7 +103,7 @@
 
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Kurye Otomasyon Sistemleri </h1>
+                  <h1>Kurye Otomasyon Sistemleri </h1>
                   <p>©2019 Tüm hakları saklıdır. <a href="https://kuryeotomasyon.com"><u>www.kuryeotomasyon.com</u></a></p>
                 </div>
               </div>
@@ -125,7 +119,7 @@
     <!-- VERY IMPORTANT!!!!!!!!!!! -->
 
     <div class="app" style="display: none">
-      <h1>tbmsoft.xyz</h1>
+      <h1>kuryeotomasyon.com</h1>
       <div id="deviceready" class="blink">
         <p class="event listening"></p>
         <p class="event received"></p>

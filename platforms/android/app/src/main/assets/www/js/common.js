@@ -109,9 +109,41 @@ function Common() {
     };
 
 
+    this.setAjaxRequest = function(url, data, callBackFunction, type){
+
+        try{
+            $.ajax({
+                url: url,
+                type: type,
+                data: JSON.stringify(data),
+                dataType: "json",
+                beforeSend(jqXHR, settings) {
+
+                },
+                headers: {
+                    'x-auth-token':'6de52eea2a6a0737d774f79af3f8c621',
+                    'Content-Type':'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'X-Requested-With':'XMLHttpRequest',
+                    'Access-Control-Allow-Credentials':'true'
+                }
+            }).done((resolveData) => {
+                callBackFunction("success",resolveData);
+            }).fail((rejectData) => {
+                callBackFunction("error",rejectData);
+            });
+
+        }catch (e) {
+            console.log(e.message);
+            return {};
+        }
+
+    };
 
 
-
+    this.isFalsy = function (value) {
+        return value==='' || value===undefined || value===null;
+    }
 
 
 

@@ -279,6 +279,10 @@ let mypanel={
 
     },
     logout: function () {
+        let courierId = window.localStorage.get('kuryeID');
+        let courierHash = window.localStorage.get('courierHash');
+        let courierName = window.localStorage.get('kuryeName');
+        socket.emit('closedMobileApp',{'message':courierName+' isimli kurye cep telefonu programını kapattı!','orderId':'','courierId':courierId,'courierHash':courierHash,'process':'closedMobileApp','usernmame':courierHash,'host':host});
         window.localStorage.removeItem("kuryeID");
         window.localStorage.removeItem("kuryeName");
         window.localStorage.removeItem("ipurl");
