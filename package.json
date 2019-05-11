@@ -1,0 +1,27 @@
+{
+  "name": "com.kuryeotomasyon.www",
+  "version": "0.0.5",
+  "displayName": "Motorlu Kurye",
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-mauron85-background-geolocation": {
+        "GOOGLE_PLAY_SERVICES_VERSION": "11+",
+        "ANDROID_SUPPORT_LIBRARY_VERSION": "26+",
+        "ICON": "@mipmap/icon",
+        "SMALL_ICON": "@mipmap/icon",
+        "ACCOUNT_NAME": "@string/app_name",
+        "ACCOUNT_LABEL": "@string/app_name",
+        "ACCOUNT_TYPE": "$PACKAGE_NAME.account",
+        "CONTENT_AUTHORITY": "$PACKAGE_NAME"
+      }
+    }
+  },
+  "dependencies": {
+    "@mauron85/cordova-plugin-background-geolocation": "^3.0.3",
+    "cordova-android": "~7.1.4",
+    "q": "^1.5.1"
+  }
+}
