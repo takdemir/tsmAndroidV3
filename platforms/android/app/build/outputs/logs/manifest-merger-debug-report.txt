@@ -67,7 +67,7 @@ INJECTED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app
 INJECTED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:2:1-81:12
 INJECTED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:2:1-81:12
 	package
-		ADDED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:2:106-138
+		ADDED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:2:106-131
 		INJECTED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -77,7 +77,7 @@ INJECTED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app
 	android:hardwareAccelerated
 		ADDED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:2:139-197
+		ADDED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:2:132-190
 	android:versionCode
 		ADDED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:2:46-77
 		INJECTED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml
@@ -156,7 +156,7 @@ MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\User
 		ADDED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
 	android:icon
 		ADDED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
-activity#com.kuryeotomasyon.www.MainActivity
+activity#net.tsmsoft.www.MainActivity
 ADDED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
 	android:label
 		ADDED from C:\Users\taner\WebstormProjects\tsmAndroidV3\platforms\android\app\src\main\AndroidManifest.xml:6:97-134
@@ -548,7 +548,7 @@ ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\cach
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:30:9-44
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:29:9-63
-permission#com.kuryeotomasyon.www.permission.C2D_MESSAGE
+permission#net.tsmsoft.www.permission.C2D_MESSAGE
 ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:28:5-30:47
 	android:protectionLevel
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:30:9-44
@@ -558,7 +558,7 @@ uses-permission#${applicationId}.permission.C2D_MESSAGE
 ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:32:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:32:22-76
-uses-permission#com.kuryeotomasyon.www.permission.C2D_MESSAGE
+uses-permission#net.tsmsoft.www.permission.C2D_MESSAGE
 ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:32:5-79
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:32:22-76
@@ -572,7 +572,7 @@ ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\cach
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:36:13-78
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:${applicationId}
 ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:39:13-43:29
-intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:com.kuryeotomasyon.www
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:net.tsmsoft.www
 ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:39:13-43:29
 action#com.google.android.c2dm.intent.RECEIVE
 ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:40:17-81
@@ -582,7 +582,7 @@ category#${applicationId}
 ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:42:17-61
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:42:27-58
-category#com.kuryeotomasyon.www
+category#net.tsmsoft.www
 ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:42:17-61
 	android:name
 		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\taner\.gradle\caches\transforms-2\files-2.1\ad70a9b92b4c6357f24820c86c520469\firebase-iid-11.8.0\AndroidManifest.xml:42:27-58

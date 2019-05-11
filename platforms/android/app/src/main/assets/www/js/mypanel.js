@@ -151,7 +151,7 @@ function onDeviceReadyForMyPanel(){
 
         }
 
-        backgroundGeolocation.finish();
+        BackgroundGeolocation.finish();
 
     };
 
@@ -183,12 +183,12 @@ function onDeviceReadyForMyPanel(){
         });
     };
 
-    backgroundGeolocation.configure(callbackFn, failureFn, {
-        desiredAccuracy: 10,
+    BackgroundGeolocation.configure(callbackFn, failureFn, {
+        desiredAccuracy: BackgroundGeolocation.HIGH_ACCURACY,
         stationaryRadius: 20,
         distanceFilter: 30,
-        url: window.localStorage.getItem("ipurl")+'/insertbackgroundposition',
-        syncUrl: window.localStorage.getItem("ipurl")+'/insertbackgroundposition',
+        url: window.localStorage.getItem("ipurl")+'/setcourierposition',
+        syncUrl: window.localStorage.getItem("ipurl")+'/setcourierposition',
         httpHeaders: { 'X-FOO': 'bar' },
         postTemplate: {
             lat: '@latitude',
@@ -198,15 +198,15 @@ function onDeviceReadyForMyPanel(){
         },
         maxLocations: 10000,
         // Android only section
-        locationProvider: backgroundGeolocation.provider.ANDROID_ACTIVITY_PROVIDER,
-        interval: 40000,
+        locationProvider: BackgroundGeolocation.ANDROID_ACTIVITY_PROVIDER,
+        interval: 10000,
         stopOnTerminate: true,
         startOnBoot: true,
         startForeground: false,
-        fastestInterval: 50000,
+        fastestInterval: 5000,
         activitiesInterval: 10000,
-        notificationTitle: 'Background tracking',
-        notificationText: 'enabled',
+        notificationTitle: 'Kurye Takibi',
+        notificationText: 'devrede...',
         notificationIconColor: '#FEDD1E',
         notificationIconLarge: 'mappointer_large',
         notificationIconSmall: 'mappointer_small',
@@ -214,8 +214,33 @@ function onDeviceReadyForMyPanel(){
     });
 
 
+    BackgroundGeolocation.on('location', function(location) {
+        // handle your locations here
+        // to perform long running operation on iOS
+        // you need to create background task
+        common.showToast('GPS takibi devrede ve yerinizi takip ediyor...','short','bottom',0);
+        BackgroundGeolocation.startTask(function(taskKey) {
+            // execute long running task
+            // eg. ajax post location
+            // IMPORTANT: task has to be ended by endTask
+            BackgroundGeolocation.endTask(taskKey);
+        });
+    });
 
-    backgroundGeolocation.start();
+    BackgroundGeolocation.on('start', function() {
+        common.showToast('GPS takibi devrede...','short','bottom',0);
+    });
+
+    BackgroundGeolocation.on('background', function() {
+        common.showToast('GPS takibi arka planda devrede...','short','bottom',0);
+
+    });
+
+    BackgroundGeolocation.on('foreground', function() {
+        common.showToast('GPS takibi arkada devrede...','short','bottom',0);
+    });
+
+    BackgroundGeolocation.start();
 
 
 
@@ -940,33 +965,19 @@ function onPause() {
     setInterval(function(){
 
 
-        backgroundGeolocation.isLocationEnabled(function (enabled) {
+        BackgroundGeolocation.isLocationEnabled(function (enabled) {
 
-            backgroundGeolocation.getLocations(function (locations) {
-                //backgroundGeolocation.showLocationSettings();
-
-                let a= "1";
-                locations.forEach(function (loc) {
-                    //if ((now - loc.time) <= sameDayDiffInMillis) {
-
-                    //}
-                    a +="2";
-                });
-                let now = Date.now();
-                let sameDayDiffInMillis = 24 * 900 * 1000;
-                //common.showToast(a,'long','center',0);
+            BackgroundGeolocation.getCurrentLocation(function (location) {
+                
                 let regid = window.localStorage.getItem("regid");
                 let kuryeID = window.localStorage.getItem("kuryeID");
-                let latitude = "-122.084";
-                let longitude = "37.889900";
-
-
+                let latitude = location.latitude;
+                let longitude = location.longitude;
 
                 if (latitude !== "" && longitude !== "") {
 
-                    let data = {"regid": regid, "tsmCourierId": kuryeID, "latitude": latitude, "longitude": longitude,"locations":locations}
-                    <!--Passing those values to the insertregid.php file-->
-                    /*$.ajax({
+                    let data = {"regid": regid, "tsmCourierId": kuryeID, "latitude": latitude, "longitude": longitude}
+                    $.ajax({
                         url: window.localStorage.getItem("ipurl") + "/setcourierposition",
                         type: "POST",
                         data: JSON.stringify(data),
@@ -983,14 +994,61 @@ function onPause() {
                                 return true;
                             }
                         }
-                    });*/
+                    });
+
+                }
+
+            });
+
+            BackgroundGeolocation.getLocations(function (locations) {
+                //BackgroundGeolocation.showLocationSettings();
+
+                let a= "1";
+                locations.forEach(function (loc) {
+                    //if ((now - loc.time) <= sameDayDiffInMillis) {
+
+                    //}
+                    a +="2";
+                });
+                let now = Date.now();
+                let sameDayDiffInMillis = 24 * 900 * 1000;
+                //common.showToast(a,'long','center',0);
+                let regid = window.localStorage.getItem("regid");
+                let kuryeID = window.localStorage.getItem("kuryeID");
+                let latitude = '';
+                let longitude = '';
+
+
+
+                if (latitude !== "" && longitude !== "") {
+
+                    let data = {"regid": regid, "tsmCourierId": kuryeID, "latitude": latitude, "longitude": longitude,"locations":locations}
+                    <!--Passing those values to the insertregid.php file-->
+                    $.ajax({
+                        url: window.localStorage.getItem("ipurl") + "/setcourierposition",
+                        type: "POST",
+                        data: JSON.stringify(data),
+                        dataType: 'json',
+                        beforeSend: function () {
+                            //alert(regid);
+                        },
+                        error: function (a, b, c) {
+                            alert("hata:" + a.responseText);
+                        },
+                        success: function (data) {
+                            //alert(data);
+                            if (!data.hasError) {
+                                return true;
+                            }
+                        }
+                    });
 
                 }
 
             });
 
         }, function () {
-            backgroundGeolocation.showLocationSettings();
+            BackgroundGeolocation.showLocationSettings();
         });
 
 

@@ -4,7 +4,7 @@
     <string name="firebase_database_url" translatable="false">https://krapp-8173.firebaseio.com</string>
     <string name="gcm_defaultSenderId" translatable="false">809436805306</string>
     <string name="google_api_key" translatable="false">AIzaSyBlzhUT8aPVPZaO3REfGGeQydOWkisEB2U</string>
-    <string name="google_app_id" translatable="false">1:809436805306:android:6b0aef189ffb5a24</string>
+    <string name="google_app_id" translatable="false">1:809436805306:android:20b88a8f91aded62</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBlzhUT8aPVPZaO3REfGGeQydOWkisEB2U</string>
     <string name="google_storage_bucket" translatable="false">krapp-8173.appspot.com</string>
     <string name="project_id" translatable="false">krapp-8173</string>

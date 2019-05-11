@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kuryeotomasyon.www"
+    package="net.tsmsoft.www"
     android:hardwareAccelerated="true"
-    android:versionCode="201905043"
-    android:versionName="0.0.5" >
+    android:versionCode="201905110"
+    android:versionName="0.0.1" >
 
     <uses-sdk
         android:minSdkVersion="19"
@@ -38,10 +38,10 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <permission
-        android:name="com.kuryeotomasyon.www.permission.C2D_MESSAGE"
+        android:name="net.tsmsoft.www.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.kuryeotomasyon.www.permission.C2D_MESSAGE" /> <!-- for android -->
+    <uses-permission android:name="net.tsmsoft.www.permission.C2D_MESSAGE" /> <!-- for android -->
     <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
     <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
     <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
@@ -72,7 +72,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true" >
         <activity
-            android:name="com.kuryeotomasyon.www.MainActivity"
+            android:name="net.tsmsoft.www.MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
             android:label="@string/activity_name"
             android:launchMode="singleInstance"
@@ -87,7 +87,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.kuryeotomasyon.www.provider"
+            android:authorities="net.tsmsoft.www.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -98,7 +98,7 @@
         <activity
             android:name="com.adobe.phonegap.push.PushHandlerActivity"
             android:exported="true"
-            android:permission="com.kuryeotomasyon.www.permission.PushHandlerActivity" />
+            android:permission="net.tsmsoft.www.permission.PushHandlerActivity" />
 
         <receiver android:name="com.adobe.phonegap.push.BackgroundActionButtonHandler" />
         <receiver android:name="com.adobe.phonegap.push.PushDismissedHandler" />
@@ -231,7 +231,7 @@
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
-                <category android:name="com.kuryeotomasyon.www" />
+                <category android:name="net.tsmsoft.www" />
             </intent-filter>
         </receiver>
         <!--
@@ -248,7 +248,7 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.kuryeotomasyon.www.firebaseinitprovider"
+            android:authorities="net.tsmsoft.www.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
 

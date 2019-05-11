@@ -1,4 +1,4 @@
-#Sat May 11 08:43:28 EET 2019
+#Sat May 11 12:46:12 EET 2019
 base.0=C\:\\Users\\taner\\WebstormProjects\\tsmAndroidV3\\platforms\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.1=classes2.dex
 renamed.1=classes2.dex
